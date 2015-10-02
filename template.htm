@@ -1,0 +1,167 @@
+## -*- coding: utf-8 -*-
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>Weekly Report ${week_number}</title>
+<style>
+  body {
+    font-family:"Arial","sans-serif";
+    font-size:10.0pt;
+  }
+  .section {
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+    text-decoration: underline;
+  }
+  
+  div.box {
+    box-sizing: border-box;
+    border:solid #DE8703 1.0pt;
+    padding:0.3em 0.0pt 0.3em 0.0pt;
+    text-align:center;
+  }
+  
+  div.header {
+    box-sizing: border-box;
+    width: 70%;
+    border: 0 solid;
+    border-color: white;
+  }
+  
+  div.header_left {
+    float: left;
+  }
+
+  div.header_right {
+    float: right;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="header_left">
+    Developer: ${developer}
+  </div>
+  <div class="header_right">
+    Week: ${week_number}
+  </div>
+</div>
+<br><br>
+
+<p align=center style='text-align:center'><b><span>TEAM NAME</span></b></p>
+
+<p align=center style='text-align:center'><b><span>COMPANY NAME</span></b></p>
+
+<div class="box">
+WEEKLY REPORT
+</div>
+<br>
+<h4 class="section" id="mainIssues">- Main Issues of the Week:</h4>
+
+<ul>
+    % for tag, items in tags.items():
+        % if tag == u'issue':
+            % for item in items:
+                <li>${item.title}
+                    <ul>
+                    % for subitem in item.subitems:
+                        <li>${subitem}</li>
+                    % endfor
+                    </ul>
+                </li>
+                <br>
+            % endfor
+        % endif
+    % endfor
+</ul>
+
+<h4 class="section" id="mainAchievements">- Main Achievements of the Week:</h4>
+
+<ul>
+    % for a in achievements:
+    <li>${a.title}
+        <ul>
+        % for subitem in a.subitems:
+        <li>${subitem}</li>
+        % endfor
+        </ul>
+    </li>
+    <br>
+    % endfor
+</ul>
+
+<h4 class="section" id="shortTermPriorities">- Short Term Priorities:</h4>
+
+<ul>
+    % for tag, items in tags.items():
+        % if tag == 'shortterm':
+            % for item in items:
+                <li>${item.title}
+                    <ul>
+                    % for subitem in item.subitems:
+                        <li>${subitem}</li>
+                    % endfor
+                    </ul>
+                </li>
+                <br>
+            % endfor
+        % endif
+    % endfor
+</ul>
+
+<h4 class="section" id="subjectsRequiringHelp">- Subjects Requiring Help:</h4>
+
+<ul>
+    % for tag, items in tags.items():
+        % if tag == 'help':
+            % for item in items:
+                <li>${item.title}
+                    <ul>
+                    % for subitem in item.subitems:
+                        <li>${subitem}</li>
+                    % endfor
+                    </ul>
+                </li>
+                <br>
+            % endfor
+        % endif
+    % endfor
+</ul>
+
+<h4 class="section" id="otherActivities">- Others Activities:</h4>
+
+<ul>
+    % for a in other_tasks:
+    <li>${a.title}</li>
+    % endfor
+</ul>
+
+<h4 class="section" id="forecastedActivities">- Forecasted Activities/Projects:</h4>
+
+<ul>
+    % for tag, items in tags.items():
+        % if tag == 'forecasted':
+            % for item in items:
+                <li>${item.title}
+                    <ul>
+                    % for subitem in item.subitems:
+                        <li>${subitem}</li>
+                    % endfor
+                    </ul>
+                </li>
+                <br>
+            % endfor
+            <br>
+        % endif
+    % endfor
+</ul>
+
+</body>
+
+</html>
