@@ -23,12 +23,12 @@ else:
 
 CONFIG_FILE = os.path.join(app_path, 'weekly.ini')
 PRIV_CONF_FILE = os.path.join(os.getenv('APPDATA'), 'weekly.conf')
-
+REDMINE_URL = 'http://demo.redmine.org'
 
 class Weekly(object):
 
     def __init__(self, args, api_key, main_project_id, other_tasks_id, tags):
-        self.redmine = Redmine('https://cpcgmine.gemalto.com', key=api_key, requests={'verify': False})
+        self.redmine = Redmine(REDMINE_URL, key=api_key, requests={'verify': False})
         self.user = self.redmine.user.get('current')
         self.weeknum, self.daynum = datetime.date.today().isocalendar()[1:]
         self.mytemplate = Template(filename='template.htm',
