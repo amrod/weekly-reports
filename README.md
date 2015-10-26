@@ -1,7 +1,6 @@
 # Weekly Reports
 
-This script was a quick-and-dirty solution to an unfortunate reality of corporate life: the Weekly Report. My employer was at least using Redmine, which is a decent project management system. But the weekly report _file_ detailing your activities during that timeframe, emailed to the manager, was still a requirement.
-Since my team was already logging time spent in Redmine isses, stories, and so forth, I came up with a quick way of producing a report using that information. 
+This script was a quick-and-dirty solution to a reality of corporate life: the Weekly Report. The team was using Redmine, which is a project management system, but a _file_ detailing the activities carried out during each week was still a requirement, to be emailed to the project manager every week. Since the team was already logging time spent in Redmine issues, stories, and so forth, I came up with a quick way of producing a report using that information.
 
 This was made for Windows users, so the private configuration file is stored in Windows's APPDATA folder. That can be easily changed by updating the `PRIV_CONF_FILE` variabe.
 More importantly, your personal Redmine API key is **not stored securely**, so if your Redmine server is publicly-facing you should handle your key more carefuly.
