@@ -1,1 +1,7 @@
 *.html
+build/*
+dist/*
+.idea/*
+.hgignore
+/.hg/*
+
