@@ -426,7 +426,7 @@ class Config(object):
 
 class Presentable(object):
     """
-    Represents a group of issues and its corresponding sub-items to be
+    Represents an item and its corresponding sub-items to be
     consumed by the templating engine.
     """
 
